@@ -53,6 +53,6 @@ Step 7: Checking the output
  - Log into your SIEM. Wait a few minutes for the events to be indexed. Search your related SIEM index, such as index=cyberark | search "CyberArk Telemetry".
 
 Example data in your SIEM:
-![image](https://github.com/aglerj/TelemetryTool2SIEM/assets/21351031/bcea2224-5499-49b4-8383-f44211412d3c)
+![image](https://github.com/aglerj/TelemetryTool2SIEM/assets/21351031/67efab4f-3a84-46fc-9e37-b82170eb6ed2)
 
 
