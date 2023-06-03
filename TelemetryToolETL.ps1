@@ -10,11 +10,10 @@ _________        ___.                   _____         __     ___________    .__ 
 #############################################################################################################################
 #
 # Purpose: To use CyberArk's Telemetry tool for On-prem environments only (don't send data to CyberArk), and instead send the data to your SIEM.
-<<<<<<< Updated upstream
+#
 #  
 =======
 # 
->>>>>>> Stashed changes
 # Updates:
 # 6/2/2023 - Joe Agler - Adjusted to send to SIEM via syslog and create required folders automatically.
 #
