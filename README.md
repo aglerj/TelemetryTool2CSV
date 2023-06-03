@@ -23,9 +23,7 @@ Step 2: Update the config.json file under ConfigFiles
             "type": "CyberArk.Telemetry.Output.File.JsonFileOutputAdapter, CyberArk.Telemetry.Output.File",
             "enabled": true,
             "adapterSettings": {"outputFilePath": "Output\\telemetryData_#date#.json"}
-        }
-        
-    ]
+        } ]
 
 Step 3: Download and update the Script
 - Download the PowerShell script - https://github.com/aglerj/TelemetryTool2CSV/blob/main/TelemetryToolETL.ps1 . Update the script to utilize your correct SIEM IP and Port.
