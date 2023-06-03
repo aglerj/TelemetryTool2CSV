@@ -5,10 +5,10 @@ Modified and improved based on CyberArk's Telemetry tool, and jcreameriii's Tele
 Updates:
 6/2/2023 - Joe Agler - Adjusted to send to SIEM via syslog and create the required folders automatically if they don't exist. Adjusted the steps wording below. 
 
-Check out my CyberArk related blogs here -  https://medium.com/@aglerj
-Looking to buy CyberArk plugins pre-packaged? Check out my site here — https://www.keyvaultsolutions.com
+- Check out my CyberArk related blogs here -  https://medium.com/@aglerj
+- Looking to buy CyberArk plugins pre-packaged? Check out my site here — https://www.keyvaultsolutions.com
 
-Prerequisites: 
+Prerequisites:
 Your SIEM configured to ingest the syslog data we're sending. For example, listen on port 9997, and send those events into index=cyberark . It depends on how your SIEM environment is configured.
 
 Step 1: Download the CyberArk Telemetry tool 
@@ -45,7 +45,8 @@ Program/script: powershell
 Add arguments (optional): -NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -File "C:\Program Files\CyberArk\CyberArk Telemetry\ETL\TelemetryToolETL.ps1"
 Press OK.
 
-Step 6: Right click on the scheduled task and run on-demand. Wait for the scheduled task to finish.  
+Step 6: Run the Scheduled Task on-demand
+Right click on the scheduled task and run on-demand. Wait for the scheduled task to finish.  
 
 Step 7: Checking the output
 Log into your SIEM. Wait a few minutes for the events to be indexed. Search your related SIEM index, such as index=cyberark | search "CyberArk Telemetry".
