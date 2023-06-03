@@ -1,6 +1,6 @@
 # TelemetryTool2SIEM
 
-Modified and improved based on CyberArk's Telemetry tool, and jcreameriii's TelemetryTool2CSV script - https://github.com/aglerj/TelemetryTool2CSV
+Modified and improved based on CyberArk's Telemetry tool, and jcreameriii's TelemetryTool2CSV script - https://github.com/jcreameriii/TelemetryTool2CSV
 
 Purpose:
 To use CyberArk's Telemetry tool for On-prem environments only (don't send data to CyberArk), and instead send the data to your SIEM.
