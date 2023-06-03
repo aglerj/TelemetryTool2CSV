@@ -26,7 +26,7 @@ Step 2: Update the config.json file under ConfigFiles
         } ]
 
 Step 3: Download and update the Script
-- Download the PowerShell script - https://github.com/aglerj/TelemetryTool2CSV/blob/main/TelemetryToolETL.ps1 . Update the script to utilize your correct SIEM IP and Port.
+- Download the PowerShell script - https://github.com/aglerj/TelemetryTool2CSV/blob/main/TelemetryToolETL.ps1 . Update the script to utilize your correct SIEM IP and Port. Note that this script utilizes UDP.
 
 #Update to use your Syslog VIP IP here
 $Syslogserver="192.168.65.200"
