@@ -1,4 +1,4 @@
-# TelemetryTool2CSV
+# TelemetryTool2SIEM
 
 Modified and improved based on CyberArk's Telemetry tool, and jcreameriii's TelemetryTool2CSV script - https://github.com/aglerj/TelemetryTool2CSV
 
