@@ -2,6 +2,9 @@
 
 Modified and improved based on CyberArk's Telemetry tool, and jcreameriii's TelemetryTool2CSV script - https://github.com/aglerj/TelemetryTool2CSV
 
+Purpose:
+To use CyberArk's Telemetry tool for On-prem environments only (don't send data to CyberArk), and instead send the data to your SIEM.
+
 Updates:
 6/2/2023 - Joe Agler - Adjusted to send to SIEM via syslog and create the required folders automatically if they don't exist. 
 
@@ -12,7 +15,7 @@ Prerequisites:
 Your SIEM configured to ingest the syslog data we're sending. For example, listen on port 9997, and send those events into index=cyberark . It depends on how your SIEM environment is configured.
 
 Step 1: Download the CyberArk Telemetry tool 
-- Download, extract and run Install the CyberArk Telemetry Tool to the default path on your utility server.
+- Download, extract and run Install the CyberArk Telemetry Tool to the default path on your utility server. When installing, do not provide a CyberArk key etc related to the Telemetry install.
 
 Step 2: Update the config.json file under ConfigFiles
 - Adjust the config.json file's outputAdapters section to only have the jsonfileoutputadapter like shown below. Or, download the config.json file from my github repo (https://github.com/aglerj/TelemetryTool2CSV/blob/main/config.json), and replace the existing one the Telemetry tool creates.
