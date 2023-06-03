@@ -82,7 +82,7 @@ else
     #$platformdetails | select Date,PolicyID,PlatformBaseID,PlatformBaseType,PlatformBaseProtocol,CompliantAccounts,TotalAccounts,IsActive | Sort PolicyID | Export-Csv -NoTypeInformation -Path "$path/$date-$csv.csv"
     $platformdetails = $platformdetails | select Date,PolicyID,PlatformBaseID,PlatformBaseType,PlatformBaseProtocol,CompliantAccounts,TotalAccounts,IsActive
 
-    ForEach($item in $platformdetails) {
+    ForEach($name in $platformdetails) {
     $platformdetailsDate = $name.Date
     $platformdetailsPolicyID = $name.PolicyID
     $platformdetailsPlatformBaseID = $name.PlatformBaseID
@@ -128,7 +128,7 @@ else
     #$components | select Date,ComponentType,Version,Deployed,Licensed | Export-Csv -NoTypeInformation -Path "$path/$date-$csv.csv"
     $components = $components | select Date,ComponentType,Version,Deployed,Licensed
 
-    ForEach($item in $components) {
+    ForEach($name in $components) {
     $componentsDate = $name.Date
     $componentsComponentType = $name.ComponentType
     $componentsVersion = $name.Version
@@ -173,7 +173,7 @@ else
     $users = $users | select Date,UserType,LicensedUsers,AllocatedUsers
 
 
-    ForEach($item in $users) {
+    ForEach($name in $users) {
     $usersDate = $name.Date
     $usersUserType = $name.UserType
     $usersLicensedUsers = $name.LicensedUsers
@@ -215,7 +215,7 @@ else
     #$appids | select Date,UserType,LicensedUsers,AllocatedUsers | Export-Csv -NoTypeInformation -Path "$path/$date-$csv.csv"
     $appids = $appids | select Date,UserType,LicensedUsers,AllocatedUsers 
 
-    ForEach($item in $appids) {
+    ForEach($name in $appids) {
     $appidsDate = $name.Date
     $appidsUserType = $name.UserType
     $appidsLicensedUsers = $name.LicensedUsers
@@ -258,7 +258,7 @@ else
     #$accounts | select TotalAccounts,TotalCompliantAccounts,DayAccountsSecretShow,WeekAccountsSecretShow,MonthAccountsSecretShow,YearAccountsSecretShow,DayAccountsSecretConnect,WeekAccountsSecretConnect,MonthAccountsSecretConnect,YearAccountsSecretConnect | Export-Csv -NoTypeInformation -Path "$path/$date-$csv.csv"
     $accounts = $accounts | select TotalAccounts,TotalCompliantAccounts,DayAccountsSecretShow,WeekAccountsSecretShow,MonthAccountsSecretShow,YearAccountsSecretShow,DayAccountsSecretConnect,WeekAccountsSecretConnect,MonthAccountsSecretConnect,YearAccountsSecretConnect 
 
-    ForEach($item in $accounts) {
+    ForEach($name in $accounts) {
     $accountsTotalAccounts = $name.TotalAccounts
     $accountsTotalCompliantAccounts = $name.TotalCompliantAccounts
     $accountsDayAccountsSecretShow = $name.DayAccountsSecretShow
