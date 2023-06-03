@@ -15,7 +15,7 @@ Step 1: Download the CyberArk Telemetry tool
 - Download, extract and run Install the CyberArk Telemetry Tool to the default path on your utility server.
 
 Step 2: Update the config.json file under ConfigFiles
-- Adjust the config.json file's outputAdapters section to only have the jsonfileoutputadapter like shown below. Or, download the config.json file from my github repo (https://github.com/aglerj/TelemetryTool2CSV), and replace the existing one the Telemetry tool creates.
+- Adjust the config.json file's outputAdapters section to only have the jsonfileoutputadapter like shown below. Or, download the config.json file from my github repo (https://github.com/aglerj/TelemetryTool2CSV/blob/main/config.json), and replace the existing one the Telemetry tool creates.
 
  "outputAdapters":     [
                 {
