@@ -41,7 +41,6 @@ If(!(test-path -PathType container $jsonpath))
 #Syslog configs
 $Hostname = "$env:COMPUTERNAME"
 $domain = "$env:USERDOMAIN"
-$port = "9997"
 $Version = "1.0"
 $Date = Get-Date
 $DateTime = $Date.ToString("yyyy-MM-ddTHH:mm:ssZ")
@@ -49,6 +48,8 @@ $DateTime = $Date.ToString("yyyy-MM-ddTHH:mm:ssZ")
 #Update to use your Syslog VIP IP here
 $Syslogserver="192.168.65.200"
 
+#Update to use your syslog port
+$port = "9997"
 
 # Find latest JSON Telemetry File & Load it for processing
 $findjson = Get-ChildItem -Path $jsonpath -Recurse -Filter "*telemetryData*" | select Name | Sort Name -Descending
