@@ -1,13 +1,12 @@
 # TelemetryTool2CSV
 
-# Modified and improved based on CyberArk's Telemetry tool, and jcreameriii's TelemetryTool2CSV script -
-# https://github.com/aglerj/TelemetryTool2CSV
+- Modified and improved based on CyberArk's Telemetry tool, and jcreameriii's TelemetryTool2CSV script - https://github.com/aglerj/TelemetryTool2CSV
 
-# Updates:
-# 6/2/2023 - Joe Agler - Adjusted to send to SIEM via syslog and create the required folders automatically if they don't exist. Adjusted the steps wording below. 
+Updates:
+6/2/2023 - Joe Agler - Adjusted to send to SIEM via syslog and create the required folders automatically if they don't exist. Adjusted the steps wording below. 
 
-# Check out my CyberArk related blogs here -  https://medium.com/@aglerj
-# Looking to buy CyberArk plugins pre-packaged? Check out my site here — https://www.keyvaultsolutions.com
+Check out my CyberArk related blogs here -  https://medium.com/@aglerj
+Looking to buy CyberArk plugins pre-packaged? Check out my site here — https://www.keyvaultsolutions.com
 
 Prerequisites: 
 Your SIEM configured to have data input monitoring on a port
