@@ -9,10 +9,26 @@ Check out my CyberArk related blogs here -  https://medium.com/@aglerj
 Looking to buy CyberArk plugins pre-packaged? Check out my site here — https://www.keyvaultsolutions.com
 
 Prerequisites: 
-Your SIEM configured to have data input monitoring on a port
+Your SIEM configured to ingest the syslog data we're sending. For example, listen on port 9997, and send those events into index=cyberark . It depends on how your SIEM environment is configured.
 
-Step 1: Download and update the Script
-Download the PowerShell script - https://github.com/aglerj/TelemetryTool2CSV. Update the script to utilize your correct SIEM IP and Port.
+Step 1: Download the CyberArk Telemetry tool 
+Download, extract and run Install the CyberArk Telemetry Tool to the default path on your utility server.
+
+Step 2: Update the config.json file under ConfigFiles
+Adjust the config.json file's outputAdapters section to only have the jsonfileoutputadapter like shown below. Or, download the config.json file from my github repo (https://github.com/aglerj/TelemetryTool2CSV), and replace the existing one the Telemetry tool creates.
+
+ "outputAdapters":     [
+                {
+            "name": "JsonFileOutputAdapter",
+            "type": "CyberArk.Telemetry.Output.File.JsonFileOutputAdapter, CyberArk.Telemetry.Output.File",
+            "enabled": true,
+            "adapterSettings": {"outputFilePath": "Output\\telemetryData_#date#.json"}
+        }
+        
+    ]
+
+Step 3: Download and update the Script
+Download the PowerShell script - https://github.com/aglerj/TelemetryTool2CSV/blob/main/TelemetryToolETL.ps1 . Update the script to utilize your correct SIEM IP and Port.
 
 #Update to use your Syslog VIP IP here
 $Syslogserver="192.168.65.200"
@@ -20,18 +36,18 @@ $Syslogserver="192.168.65.200"
 #Update to use your syslog port
 $port = "9997"
 
-Step 2: Staging the Script
-Stage the PowerShell script on the machine that runs your CyberArk Telemetry Tool scheduled task. On that machine, navigate to the default CyberArk Telemetry folder (C:/Program Files/CyberArk/CyberArk Telemetry). Paste the PowerShell script within the ETL folder.
+Step 4: Staging the Script
+Stage the updated PowerShell script on the utility server that runs your CyberArk Telemetry Tool scheduled task. On that machine, navigate to the default CyberArk Telemetry folder (C:/Program Files/CyberArk/CyberArk Telemetry). Paste the updated PowerShell script within the ETL folder.
 
-Step 3: Modify the Scheduled Task
+Step 6: Modify the Scheduled Task
 Launch task scheduler and edit the CyberArk Telemetry task by right clicking on it and selecting properties. Under the Actions tab, add a new action to launch the PowerShell script.
 Program/script: powershell
 Add arguments (optional): -NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -File "C:\Program Files\CyberArk\CyberArk Telemetry\ETL\TelemetryToolETL.ps1"
 Press OK.
 
-Step 4: Right click on the task and run on-demand.
+Step 6: Right click on the scheduled task and run on-demand. Wait for the scheduled task to finish.  
 
-Step 5: Checking the output
-Log into your SIEM. Wait a few minutes for the events to be indexed. Search your related SIEM index, such as index=cyberark .
+Step 7: Checking the output
+Log into your SIEM. Wait a few minutes for the events to be indexed. Search your related SIEM index, such as index=cyberark | search "CyberArk Telemetry".
 
 

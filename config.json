@@ -1,0 +1,44 @@
+{
+    "logging":     {
+        "configFilePath": "ConfigFiles\\log4net.config",
+        "logFolder": "Log"
+    },
+    "runtime":     {
+        "clientID": "Telemetry",
+        "topics":         [
+                        {
+                "type": "components",
+                "enabled": true
+            },
+                        {
+                "type": "users",
+                "enabled": true
+            },
+                        {
+                "type": "applications",
+                "enabled": true
+            },
+                        {
+                "type": "accounts",
+                "enabled": true
+            },
+                        {
+                "type": "platforms",
+                "enabled": true
+            },
+                        {
+                "type": "sessionsManagement",
+                "enabled": true
+            }
+        ]
+    },
+    "outputAdapters":     [
+                {
+            "name": "JsonFileOutputAdapter",
+            "type": "CyberArk.Telemetry.Output.File.JsonFileOutputAdapter, CyberArk.Telemetry.Output.File",
+            "enabled": true,
+            "adapterSettings": {"outputFilePath": "Output\\telemetryData_#date#.json"}
+        }
+        
+    ]
+}
