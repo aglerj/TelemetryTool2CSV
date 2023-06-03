@@ -56,3 +56,22 @@ Example data in your SIEM:
 ![image](https://github.com/aglerj/TelemetryTool2SIEM/assets/21351031/67efab4f-3a84-46fc-9e37-b82170eb6ed2)
 
 
+Example SIEM formats to help with your field extractions:
+TelemetryPlatforms - 
+$DateTime CEF:0|CyberArk Telemetry|$MonitorType|$Version|$platformdetailsPolicyID|$platformdetailsPlatformBaseID|$platformdetailsPlatformBaseType|$platformdetailsPlatformBaseProtocol|$platformdetailsCompliantAccounts|$platformdetailsTotalAccounts|$platformdetailsIsActive|$platformdetailsDate
+
+TelemetryComponents - 
+$DateTime CEF:0|CyberArk Telemetry|$MonitorType|$Version|$componentsComponentType|$componentsVersion|$componentsDeployed|$componentsLicensed|$componentsDate
+
+TelemetryUsers - 
+$DateTime CEF:0|CyberArk Telemetry|$MonitorType|$Version|$usersUserType|$usersLicensedUsers|$usersAllocatedUsers|$usersDate
+
+TelemetryAppIDs - 
+$DateTime CEF:0|CyberArk Telemetry|$MonitorType|$Version|$appidsUserType|$appidsLicensedUsers|$appidsAllocatedUsers|$appidsDate
+
+TelemetryAccounts - 
+$DateTime CEF:0|CyberArk Telemetry|$MonitorType|$Version|$accountsTotalAccounts|$accountsTotalCompliantAccounts|$accountsDayAccountsSecretShow|$accountsWeekAccountsSecretShow|$accountsMonthAccountsSecretShow|$accountsYearAccountsSecretShow|$accountsDayAccountsSecretConnect|$accountsWeekAccountsSecretConnect|$accountsMonthAccountsSecretConnect|$accountsYearAccountsSecretConnect
+
+
+
+
